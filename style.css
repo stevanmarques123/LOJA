@@ -1,0 +1,43 @@
+body{
+    display: grid;
+    grid-template-areas:
+    "cima cima"
+    "babo babo"
+    "alto alto"
+    "baixo baixo";
+     grid-template-rows: 100px 500px 100px;
+     grid-template-columns: 400px auto;
+
+}
+
+     header{
+        background-color: aqua;
+        grid-area: cima;
+     }
+
+    aside{
+        background-color: brown;
+        grid-area: babo;
+    }
+    main{
+        background-color: blueviolet;
+        grid-area: alto;
+    }
+    @media only screen (max-width:450px){
+        body{display:grid;
+            grid-template-areas:
+    "cima cima"
+    "babo babo"
+    "alto alto"
+    "baixo baixo";
+     grid-template-rows:100px 500px 100px;
+     grid-template columns: auto;
+     }
+    }
+    
+
+
+    
+  
+
+    
