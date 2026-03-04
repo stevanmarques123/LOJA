@@ -16,13 +16,17 @@ body{
      }
 
     aside{
-        background-color: brown;
+        background-color: rgb(136, 255, 0);
         grid-area: babo;
     }
     main{
         background-color: blueviolet;
         grid-area: alto;
     }
+    footer{
+        background-color: rgb(226, 43, 43);
+        grid-area: baixo;
+
     @media only screen (max-width:450px){
         body{display:grid;
             grid-template-areas:
