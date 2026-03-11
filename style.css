@@ -1,92 +1,101 @@
-body{
+
+body {
     display: grid;
     grid-template-areas:
-    "cima cima"
-    "babo babo"
-    "alto alto"
-    "baixo baixo";
-     grid-template-rows: 100px 500px 100px;
-     grid-template-columns: 400px auto;
+        "cima cima"
+        "babo babo"
+        "alto alto"
+        "baixo baixo";
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 400px auto;
+}
+.mae{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
-     header{
-        background-color: aqua;
-        grid-area: cima;
-     }
+header {
+    background-color: aqua;
+    grid-area: cima;
+}
 
-    aside{
-        background-color: rgb(136, 255, 0);
-        grid-area: babo;
-    }
-    main{
-        background-color: blueviolet;
-        grid-area: alto;
-    }
-    footer{
-        background-color: rgb(226, 43, 43);
-        grid-area: baixo;
+aside {
+    background-color: rgb(136, 255, 0);
+    grid-area: babo;
+}
 
-    @media only screen (max-width:450px){
-        body{display:grid;
-            grid-template-areas:
-    "cima cima"
-    "babo babo"
-    "alto alto"
-    "baixo baixo";
-     grid-template-rows:100px 500px 100px;
-     grid-template columns: auto;
-     }
-     aside{
-            display: none; 
-     }
-        
-    }
-    .card{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 50px;
-        align-items: center;
-        border: yellow 2px solid;
-        background-color: rgb(27, 2, 245);
-        width: 400px;
-        height: 650px;
-        border-radius: 10px;
-        text-align: center;
-        margin: 10px;
-    }
-    .imagem_produto{
-             width: 320px;
-    }
-    .d_produto{
-          color: darkblue;
-          font-size: xx-large;
-    }
-    .p_produto{
-        color: brown;
-        font-size: 40px;
-    }
-    .botao_produto{
-          font-size: 30px;
-          background-color: black;
-          width: 50%;
-          text-decoration: none;
-          height: 50px;
-          border-radius: 20px;
-    }
-    .letra_botao{
-         display: block;
-         text-align: center;
-         text-decoration: none;
-         color: aliceblue;
-    }
-    .mae{
-        display: flex;
-        flex-wrap: ;
-        justify-content: center;
-    }
+main {
+    background-color: blueviolet;
+    grid-area: alto;
+}
+
+footer {
+    background-color: rgb(226, 43, 43);
+    grid-area: baixo;
+}
 
 
-    
-  
+.imagem_produto {
+    width: 100%;           
+    height: auto;          
+    object-fit: contain;   
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.card{
+     margin: 10px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 35px;
+     align-items: center;
+     border: yellow 2px solid;
+     background-color: green;
+     width: 300px;
+     height: 450px;
+     border-radius: 50px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "cima"
+            "babo"
+            "alto"
+            "baixo";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    body {
+        grid-template-areas:
+            "cima"
+            "alto"
+            "baixo";
+    }
+
+    header, footer, main {
+        padding: 20px;
+    }
+
+    .imagem_produto {
+        width: 100%; 
+        height: auto;
+        object-fit: contain; 
+    }
+
+    .botao_produto {
+        width: 100%;
+    }
+}
