@@ -6,62 +6,78 @@ body {
         "babo babo"
         "alto alto"
         "baixo baixo";
-    grid-template-rows: 100px auto 100px;
-    grid-template-columns: 400px auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
 }
-.mae{
+
+
+header, aside, main, footer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-header {
-    background-color: aqua;
-    grid-area: cima;
+header { background-color: aqua; grid-area: cima; }
+aside { background-color: rgb(136, 255, 0); grid-area: babo; }
+main { background-color: blueviolet; grid-area: alto; }
+footer { background-color: rgb(226, 43, 43); grid-area: baixo; }
+
+
+.mae {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-items: center;                 
+    gap: 15px;
+    width: 100%;
 }
 
-aside {
-    background-color: rgb(136, 255, 0);
-    grid-area: babo;
-}
 
-main {
-    background-color: blueviolet;
-    grid-area: alto;
-}
-
-footer {
-    background-color: rgb(226, 43, 43);
-    grid-area: baixo;
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    background-color: green;
+    width: 150px;     
 }
 
 
 .imagem_produto {
-    width: 100%;           
-    height: auto;          
-    object-fit: contain;   
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto; 
-}
-
-.card{
-     margin: 10px;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     padding: 35px;
-     align-items: center;
-     border: yellow 2px solid;
-     background-color: green;
-     width: 300px;
-     height: 450px;
-     border-radius: 50px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 
-@media only screen and (max-width: 768px) {
+.botao_produto {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: yellow;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: 80%;
+}
+
+
+@media (max-width: 1024px) {
+    .mae {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .card {
+        width: 140px;
+    }
+}
+
+
+@media (max-width: 768px) {
     body {
         grid-template-areas:
             "cima"
@@ -69,33 +85,11 @@ footer {
             "alto"
             "baixo";
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
     }
-
-    aside {
-        display: none;
+    .mae {
+        grid-template-columns: 1fr; 
     }
-}
-
-@media only screen and (max-width: 450px) {
-    body {
-        grid-template-areas:
-            "cima"
-            "alto"
-            "baixo";
-    }
-
-    header, footer, main {
-        padding: 20px;
-    }
-
-    .imagem_produto {
-        width: 100%; 
-        height: auto;
-        object-fit: contain; 
-    }
-
-    .botao_produto {
-        width: 100%;
+    .card {
+        width: 90%;
     }
 }
