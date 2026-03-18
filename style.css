@@ -18,7 +18,8 @@ aside, main, footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 0px;
+    margin: 0px;
 }
 
 header { background-color: rgb(0, 183, 255); grid-area: cima; }
@@ -29,7 +30,7 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
 
 .mae {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     justify-items: center;                 
     gap: 15px;
     width: 100%;
@@ -44,7 +45,7 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
     border: 2px solid yellow;
     border-radius: 20px;
     background-color: green;
-    width: 150px;     
+    width: 350px;     
 }
 
 
@@ -68,7 +69,15 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
 
 
 @media (max-width: 1024px) {
-    .mae {
+body{ 
+    grid-template-areas:
+            "cima"
+            "babo"
+            "alto"
+            "baixo";
+        grid-template-columns: 1fr;
+}
+        .mae {
         grid-template-columns: repeat(2, 1fr); 
     }
     .card {
@@ -81,7 +90,6 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
     body {
         grid-template-areas:
             "cima"
-            "babo"
             "alto"
             "baixo";
         grid-template-columns: 1fr;
@@ -91,5 +99,9 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
     }
     .card {
         width: 90%;
+    }
+
+    aside {
+        display: none;
     }
 }
