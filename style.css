@@ -43,7 +43,7 @@ footer { background-color: rgb(141, 226, 43); grid-area: baixo; }
     align-items: center;
     padding: 10px;
     border: 2px solid yellow;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: green;
     width: 350px;     
 }
